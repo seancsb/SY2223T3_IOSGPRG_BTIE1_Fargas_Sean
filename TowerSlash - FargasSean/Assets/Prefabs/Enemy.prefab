@@ -213,6 +213,7 @@ MonoBehaviour:
   swipeDir: default
   currentSpeed: 1
   enemyKillable: 0
+  enemy: {fileID: 514799045877042758}
 --- !u!61 &514799045877042754
 BoxCollider2D:
   m_ObjectHideFlags: 0

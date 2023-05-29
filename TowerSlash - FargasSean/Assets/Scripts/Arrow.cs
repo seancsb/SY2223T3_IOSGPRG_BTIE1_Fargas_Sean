@@ -19,50 +19,50 @@ public class Arrow : MonoBehaviour
         if (spriteRenderer.sprite == sprites[0])
         {
             enemy.swipeDir = "left";
-            //Debug.Log(enemy.swipeDir);
+            Debug.Log(enemy.swipeDir);
         }
 
         else if (spriteRenderer.sprite == sprites[1])
         {
             enemy.swipeDir = "right";
-            //Debug.Log(enemy.swipeDir);
+            Debug.Log(enemy.swipeDir);
         }
 
         else if (spriteRenderer.sprite == sprites[2])
         {
             enemy.swipeDir = "down";
-            //Debug.Log(enemy.swipeDir);
+            Debug.Log(enemy.swipeDir);
         }
 
         else if (spriteRenderer.sprite == sprites[3])
         {
             enemy.swipeDir = "up";
-            //Debug.Log(enemy.swipeDir);
+            Debug.Log(enemy.swipeDir);
         }
 
         // Red Arrows
         else if (spriteRenderer.sprite == sprites[4])
         {
             enemy.swipeDir = "right";
-            //Debug.Log(enemy.swipeDir);
+            Debug.Log(enemy.swipeDir);
         }
 
         else if (spriteRenderer.sprite == sprites[5])
         {
             enemy.swipeDir = "left";
-            //Debug.Log(enemy.swipeDir);
+            Debug.Log(enemy.swipeDir);
         }
 
         else if (spriteRenderer.sprite == sprites[6])
         {
             enemy.swipeDir = "up";
-            //Debug.Log(enemy.swipeDir);
+            Debug.Log(enemy.swipeDir);
         }
 
         else if (spriteRenderer.sprite == sprites[7])
         {
             enemy.swipeDir = "down";
-            //Debug.Log(enemy.swipeDir);
+            Debug.Log(enemy.swipeDir);
         }
     }
 

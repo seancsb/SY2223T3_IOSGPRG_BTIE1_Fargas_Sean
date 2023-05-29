@@ -86,28 +86,28 @@ public class SwipeDetection : MonoBehaviour
                 if (Distance.x < -swipeRange)
                 {
                     playerInput = "left";
-                    //Debug.Log("Left");
+                    Debug.Log("Swipe Left");
                     debugText.text = "Swipe Left";
                     stopTouch = true;
                 }
                 else if (Distance.x > swipeRange)
                 {
                     playerInput = "right";
-                    //Debug.Log("Right");
+                    Debug.Log("Swipe Right");
                     debugText.text = "Swipe Right";
                     stopTouch = true;
                 }
                 else if (Distance.y > swipeRange)
                 {
                     playerInput = "up";
-                    //Debug.Log("Up");
+                    Debug.Log("Swipe Up");
                     debugText.text = "Swipe Up";
                     stopTouch = true;
                 }
                 else if (Distance.y < -swipeRange)
                 {
                     playerInput = "down";
-                    //Debug.Log("Down");
+                    Debug.Log("Swipe Down");
                     debugText.text = "Swipe Down";
                     stopTouch = true;
                 }

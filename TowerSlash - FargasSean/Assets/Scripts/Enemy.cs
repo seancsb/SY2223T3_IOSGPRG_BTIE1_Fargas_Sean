@@ -17,9 +17,11 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] public bool enemyKillable;
 
+    [SerializeField] Enemy enemy;
+
     void Start()
     {
-        enemyKillable = false;
+        enemyKillable = true;
         //Debug.Log("GAME START");
     }
 
@@ -31,10 +33,10 @@ public class Enemy : MonoBehaviour
 
         if (enemyKillable == true)
         {
-            if (input.playerInput == swipeDir)
-            {
-                killEnemy();
-            }
+            //if (input.playerInput == enemy.swipeDir)
+            //{
+            //    killEnemy();
+            //}
         }
     }
 
