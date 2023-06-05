@@ -19,6 +19,8 @@ public class Enemy : MonoBehaviour
 
     //[SerializeField] Enemy enemy;
 
+    [SerializeField] DashManager dash;
+
     void Start()
     {
         enemyKillable = true;
@@ -63,6 +65,7 @@ public class Enemy : MonoBehaviour
         //}
 
         Destroy(gameObject);
+        dash.AddDashPoints(10);
     }
 
     public void despawnEnemy()
