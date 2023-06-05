@@ -11,58 +11,77 @@ public class Arrow : MonoBehaviour
     [SerializeField] SwipeDetection input;
     [SerializeField] Enemy enemy;
 
+    private int Randomization = 7;
+
     void Start()
     {
-        spriteRenderer.sprite = sprites[Random.Range(0, sprites.Length - 1)];
+        if(Randomization >= 0)
+        { 
+            Randomization = Random.Range(0, 7);
+        }
 
-        // Green Arrows
-        if (spriteRenderer.sprite == sprites[0])
+        if(Randomization == 0)
         {
             enemy.swipeDir = "left";
             Debug.Log(enemy.swipeDir);
+            spriteRenderer.sprite = sprites[0];
+            gameObject.GetComponent<SpriteRenderer>().color = Color.green;
         }
 
-        else if (spriteRenderer.sprite == sprites[1])
+        if (Randomization == 1)
         {
             enemy.swipeDir = "right";
             Debug.Log(enemy.swipeDir);
+            spriteRenderer.sprite = sprites[1];
+            gameObject.GetComponent<SpriteRenderer>().color = Color.green;
         }
 
-        else if (spriteRenderer.sprite == sprites[2])
+        if (Randomization == 2)
         {
             enemy.swipeDir = "down";
             Debug.Log(enemy.swipeDir);
+            spriteRenderer.sprite = sprites[2];
+            gameObject.GetComponent<SpriteRenderer>().color = Color.green;
         }
 
-        else if (spriteRenderer.sprite == sprites[3])
+        if (Randomization == 3)
         {
             enemy.swipeDir = "up";
             Debug.Log(enemy.swipeDir);
+            spriteRenderer.sprite = sprites[3];
+            gameObject.GetComponent<SpriteRenderer>().color = Color.green;
         }
 
-        // Red Arrows
-        else if (spriteRenderer.sprite == sprites[4])
+        if (Randomization == 4)
         {
             enemy.swipeDir = "right";
             Debug.Log(enemy.swipeDir);
+            spriteRenderer.sprite = sprites[0];
+            gameObject.GetComponent<SpriteRenderer>().color = Color.red;
         }
 
-        else if (spriteRenderer.sprite == sprites[5])
+        if (Randomization == 5)
         {
             enemy.swipeDir = "left";
             Debug.Log(enemy.swipeDir);
+            spriteRenderer.sprite = sprites[1];
+            gameObject.GetComponent<SpriteRenderer>().color = Color.red;
         }
 
-        else if (spriteRenderer.sprite == sprites[6])
+        if (Randomization == 6)
         {
             enemy.swipeDir = "up";
             Debug.Log(enemy.swipeDir);
+            spriteRenderer.sprite = sprites[2];
+            gameObject.GetComponent<SpriteRenderer>().color = Color.red;
         }
 
-        else if (spriteRenderer.sprite == sprites[7])
+        if (Randomization == 7)
         {
             enemy.swipeDir = "down";
             Debug.Log(enemy.swipeDir);
+            spriteRenderer.sprite = sprites[3];
+            gameObject.GetComponent<SpriteRenderer>().color = Color.red;
         }
     }
 

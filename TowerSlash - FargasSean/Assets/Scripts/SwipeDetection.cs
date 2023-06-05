@@ -6,51 +6,6 @@ using TMPro;
 
 public class SwipeDetection : MonoBehaviour
 {
-    //[SerializeField] private TextMeshProUGUI debugText;
-
-    //private Vector2 initialTouchPosition;
-    //private Vector2 endTouchPosition;
-
-    //void Update()
-    //{
-    //    if(Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
-    //    {
-    //        Touch touch = Input.GetTouch(0);
-    //        initialTouchPosition = touch.position;
-    //    }
-
-    //    if(Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
-    //    {
-    //        Touch touch = Input.GetTouch(0);
-    //        endTouchPosition = touch.position;
-
-    //        CheckSwipe();
-    //    }
-    //}
-
-    //private void CheckSwipe()
-    //{
-    //    if (initialTouchPosition.x < endTouchPosition.x)
-    //    {
-    //        debugText.text = "Swiped Right";
-    //    }
-
-    //    if (initialTouchPosition.x > endTouchPosition.x)
-    //    {
-    //        debugText.text = "Swiped Left";
-    //    }
-
-    //    if (initialTouchPosition.y < endTouchPosition.y)
-    //    {
-    //        debugText.text = "Swiped Up";
-    //    }
-
-    //    if (initialTouchPosition.y > endTouchPosition.y)
-    //    {
-    //        debugText.text = "Swiped Down";
-    //    }
-    //}
-
     [SerializeField] private TextMeshProUGUI debugText;
 
     private Vector2 startTouchPos;
@@ -78,6 +33,11 @@ public class SwipeDetection : MonoBehaviour
 
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
         {
+            
+        }
+
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
+        {
             currentTouchPos = Input.GetTouch(0).position;
             Vector2 Distance = currentTouchPos - startTouchPos;
 
@@ -86,41 +46,38 @@ public class SwipeDetection : MonoBehaviour
                 if (Distance.x < -swipeRange)
                 {
                     playerInput = "left";
-                    Debug.Log("Swipe Left");
+                    //Debug.Log("Swipe Left");
                     debugText.text = "Swipe Left";
                     stopTouch = true;
                 }
                 else if (Distance.x > swipeRange)
                 {
                     playerInput = "right";
-                    Debug.Log("Swipe Right");
+                    //Debug.Log("Swipe Right");
                     debugText.text = "Swipe Right";
                     stopTouch = true;
                 }
                 else if (Distance.y > swipeRange)
                 {
                     playerInput = "up";
-                    Debug.Log("Swipe Up");
+                    //Debug.Log("Swipe Up");
                     debugText.text = "Swipe Up";
                     stopTouch = true;
                 }
                 else if (Distance.y < -swipeRange)
                 {
                     playerInput = "down";
-                    Debug.Log("Swipe Down");
+                    //Debug.Log("Swipe Down");
                     debugText.text = "Swipe Down";
                     stopTouch = true;
                 }
             }
-        }
 
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
-        {
             stopTouch = false;
 
             endTouchPos = Input.GetTouch(0).position;
 
-            Vector2 Distance = endTouchPos - startTouchPos;
+            Distance = endTouchPos - startTouchPos;
 
             if (Mathf.Abs(Distance.x) < tapRange && Mathf.Abs(Distance.y) < tapRange)
             {

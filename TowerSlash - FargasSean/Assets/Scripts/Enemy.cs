@@ -13,11 +13,11 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     int currentSpeed;
 
-    int dropPercentage;
+    //int dropPercentage;
 
     [SerializeField] public bool enemyKillable;
 
-    [SerializeField] Enemy enemy;
+    //[SerializeField] Enemy enemy;
 
     void Start()
     {
@@ -29,15 +29,15 @@ public class Enemy : MonoBehaviour
     {
         transform.Translate(Vector2.down * currentSpeed * Time.deltaTime);
 
-        dropPercentage = Random.Range(0, 10);
+        //dropPercentage = Random.Range(0, 10);
 
-        if (enemyKillable == true)
+        //if (enemyKillable == true)
+        //{
+        if (input.playerInput == swipeDir)
         {
-            //if (input.playerInput == enemy.swipeDir)
-            //{
-            //    killEnemy();
-            //}
+            killEnemy();
         }
+        //}
     }
 
     public void OnTriggerEnter2D(Collider2D col)
@@ -57,10 +57,10 @@ public class Enemy : MonoBehaviour
 
     public void killEnemy()
     {
-        if (dropPercentage <= 1)
-        {
-            Debug.Log("You have received an extra life!");
-        }
+        //if (dropPercentage <= 1)
+        //{
+        //    Debug.Log("You have received an extra life!");
+        //}
 
         Destroy(gameObject);
     }
