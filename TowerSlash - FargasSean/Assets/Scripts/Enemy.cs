@@ -21,6 +21,7 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
+        input.playerInput = "default";
         dashManager = GameObject.Find("DashManager").GetComponent<DashManager>();
     }
 
@@ -28,8 +29,8 @@ public class Enemy : MonoBehaviour
     {
         if (col.gameObject.tag == "endPoint")
         {
-            despawnEnemy();
             Health.hp--;
+            despawnEnemy();
         }
 
         if (col.gameObject.tag == "inBound")

@@ -484,7 +484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a81eceff84df7c46bb2a10474aa1d9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _randX: 1.05
+  _randX: 0.825
   _randY: 5.5
   timeToSpawn: 3
   objecsToInstantiate:
