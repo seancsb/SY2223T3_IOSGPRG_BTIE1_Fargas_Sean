@@ -6,9 +6,7 @@ using TMPro;
 
 public class SwipeDetection : MonoBehaviour
 {
-    //[SerializeField] private TextMeshProUGUI debugText;
-
-    private Vector2 startTouchPos;
+     private Vector2 startTouchPos;
     private Vector2 currentTouchPos;
     private Vector2 endTouchPos;
 
@@ -46,25 +44,21 @@ public class SwipeDetection : MonoBehaviour
                 if (Distance.x < -swipeRange)
                 {
                     playerInput = "left";
-                    //debugText.text = "Swipe Left";
                     stopTouch = true;
                 }
                 else if (Distance.x > swipeRange)
                 {
                     playerInput = "right";
-                    //debugText.text = "Swipe Right";
                     stopTouch = true;
                 }
                 else if (Distance.y > swipeRange)
                 {
                     playerInput = "up";
-                    //debugText.text = "Swipe Up";
                     stopTouch = true;
                 }
                 else if (Distance.y < -swipeRange)
                 {
                     playerInput = "down";
-                    //debugText.text = "Swipe Down";
                     stopTouch = true;
                 }
             }

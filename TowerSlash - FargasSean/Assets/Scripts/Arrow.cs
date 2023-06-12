@@ -12,7 +12,6 @@ public class Arrow : MonoBehaviour
     [SerializeField] Enemy enemy;
 
     private int Randomization = 7;
-    //private int Randomization = 0;
 
     void Start()
     {
@@ -20,11 +19,6 @@ public class Arrow : MonoBehaviour
         {
             Randomization = Random.Range(0, 7);
         }
-
-        //while(true)
-        //{
-        //    Randomization = Random.Range(0, 7);
-        //}
 
         if (Randomization == 0)
         {
@@ -89,11 +83,6 @@ public class Arrow : MonoBehaviour
             spriteRenderer.sprite = sprites[3];
             gameObject.GetComponent<SpriteRenderer>().color = Color.red;
         }
-    }
-
-    void Update()
-    {
-
     }
 
     public void OnTriggerEnter2D(Collider2D col)

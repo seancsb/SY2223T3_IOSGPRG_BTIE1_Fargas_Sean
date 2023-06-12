@@ -8,7 +8,6 @@ public class LoadCharacter : MonoBehaviour
 {
     public GameObject[] characterPrefabs;
     public Transform spawnPoint;
-    //public Text label;
 
     private void Start()
     {

@@ -15,6 +15,8 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] public bool enemyKillable = false;
 
+    private int dropPercentage;
+
     public void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag == "endPoint")
@@ -33,6 +35,8 @@ public class Enemy : MonoBehaviour
     {
         transform.Translate(Vector2.down * currentSpeed * Time.deltaTime);
 
+        dropPercentage = Random.Range(0, 10);
+
         if (enemyKillable == true)
         {
             if (input.playerInput == swipeDir)
@@ -46,9 +50,16 @@ public class Enemy : MonoBehaviour
     {
         Scoring.points++;
 
+        if (dropPercentage <= 1)
+        {
+            Health.hp++;
+            Debug.Log("You have received an extra life!");
+        }
+
         Destroy(gameObject);
 
         input.playerInput = "default";
+        Debug.Log(input.playerInput);
     }
 
     public void despawnEnemy()

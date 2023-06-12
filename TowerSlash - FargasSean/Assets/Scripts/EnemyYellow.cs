@@ -9,7 +9,6 @@ public class EnemyYellow : MonoBehaviour
     [SerializeField] private Sprite[] sprites;
 
     [SerializeField] private bool isPlayerNear = false;
-    //[SerializeField] public bool isPlayerDamaged = false;
 
     [SerializeField] SwipeDetection input;
     [SerializeField] Enemy enemy;

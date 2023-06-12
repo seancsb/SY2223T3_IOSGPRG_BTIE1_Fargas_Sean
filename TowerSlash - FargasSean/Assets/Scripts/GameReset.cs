@@ -8,12 +8,10 @@ public class GameReset : MonoBehaviour
     public void ResetGame()
     {
         SceneManager.LoadScene("Game");
-        //Debug.Log("GameOver");
     }
 
     public void ChangeCharacter()
     {
         SceneManager.LoadScene("CharacterSelection");
-        //Debug.Log("Char Selection");
     }
 }
