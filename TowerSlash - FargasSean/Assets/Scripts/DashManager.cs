@@ -13,11 +13,6 @@ public class DashManager : MonoBehaviour
         dashAmount = 0f;
     }
 
-    void Update()
-    {
-        
-    }
-    
     public void AddDashPoints(float points)
     {
         dashAmount += points;

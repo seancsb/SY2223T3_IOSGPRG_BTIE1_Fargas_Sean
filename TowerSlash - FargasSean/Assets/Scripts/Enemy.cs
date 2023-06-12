@@ -17,6 +17,13 @@ public class Enemy : MonoBehaviour
 
     private int dropPercentage;
 
+    private DashManager dashManager;
+
+    void Start()
+    {
+        dashManager = GameObject.Find("DashManager").GetComponent<DashManager>();
+    }
+
     public void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag == "endPoint")
@@ -27,6 +34,7 @@ public class Enemy : MonoBehaviour
 
         if (col.gameObject.tag == "inBound")
         {
+            input.playerInput = "default";
             enemyKillable = true;
         }
     }
@@ -39,6 +47,7 @@ public class Enemy : MonoBehaviour
 
         if (enemyKillable == true)
         {
+            gameObject.GetComponent<SpriteRenderer>().color = Color.red;
             if (input.playerInput == swipeDir)
             {
                 killEnemy();
@@ -56,10 +65,9 @@ public class Enemy : MonoBehaviour
             Debug.Log("You have received an extra life!");
         }
 
-        Destroy(gameObject);
+        dashManager.AddDashPoints(5);
 
-        input.playerInput = "default";
-        Debug.Log(input.playerInput);
+        Destroy(gameObject);
     }
 
     public void despawnEnemy()

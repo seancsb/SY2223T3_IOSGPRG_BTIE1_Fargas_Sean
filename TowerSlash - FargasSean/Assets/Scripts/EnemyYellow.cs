@@ -23,8 +23,9 @@ public class EnemyYellow : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.tag == "inBound")
+        if (collider.gameObject.tag == "stopRotation")
         {
+            input.playerInput = "default";
             isPlayerNear = true;
         }
     }
