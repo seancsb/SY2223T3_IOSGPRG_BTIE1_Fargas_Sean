@@ -8,68 +8,53 @@ using Random = UnityEngine.Random;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] SwipeDetection input;
+
     public string swipeDir = "default";
 
-    [SerializeField]
-    int currentSpeed;
+    [SerializeField] int currentSpeed;
 
-    //int dropPercentage;
+    [SerializeField] public bool enemyKillable = false;
 
-    [SerializeField] public bool enemyKillable;
-
-    //[SerializeField] Enemy enemy;
-
-    [SerializeField] DashManager dash;
-
-    void Start()
+    public void OnTriggerEnter2D(Collider2D col)
     {
-        enemyKillable = true;
-        //Debug.Log("GAME START");
+        if (col.gameObject.tag == "endPoint")
+        {
+            despawnEnemy();
+            Health.hp--;
+        }
+
+        if (col.gameObject.tag == "inBound")
+        {
+            enemyKillable = true;
+        }
     }
 
     void Update()
     {
         transform.Translate(Vector2.down * currentSpeed * Time.deltaTime);
 
-        //dropPercentage = Random.Range(0, 10);
-
-        //if (enemyKillable == true)
-        //{
-        if (input.playerInput == swipeDir)
+        if (enemyKillable == true)
         {
-            killEnemy();
-        }
-        //}
-    }
-
-    public void OnTriggerEnter2D(Collider2D col)
-    {
-        //if (col.gameObject.tag == "killableEnemy")
-        //{
-        //    enemyKillable = true;
-        //    Debug.Log("KILLABLE ENEMY");
-        //}
-
-        if (col.gameObject.tag == "endPoint")
-        {
-            despawnEnemy();
-            Debug.Log("PASSSED PLAYER");
+            if (input.playerInput == swipeDir)
+            {
+                killEnemy();
+            }
         }
     }
 
     public void killEnemy()
     {
-        //if (dropPercentage <= 1)
-        //{
-        //    Debug.Log("You have received an extra life!");
-        //}
+        Scoring.points++;
 
         Destroy(gameObject);
-        dash.AddDashPoints(10);
+
+        input.playerInput = "default";
     }
 
     public void despawnEnemy()
     {
         Destroy(gameObject);
+
+        input.playerInput = "default";
     }
 }

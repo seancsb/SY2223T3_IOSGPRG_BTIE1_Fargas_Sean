@@ -12,15 +12,21 @@ public class Arrow : MonoBehaviour
     [SerializeField] Enemy enemy;
 
     private int Randomization = 7;
+    //private int Randomization = 0;
 
     void Start()
     {
-        if(Randomization >= 0)
-        { 
+        if (Randomization >= 0)
+        {
             Randomization = Random.Range(0, 7);
         }
 
-        if(Randomization == 0)
+        //while(true)
+        //{
+        //    Randomization = Random.Range(0, 7);
+        //}
+
+        if (Randomization == 0)
         {
             enemy.swipeDir = "left";
             Debug.Log(enemy.swipeDir);
@@ -83,6 +89,11 @@ public class Arrow : MonoBehaviour
             spriteRenderer.sprite = sprites[3];
             gameObject.GetComponent<SpriteRenderer>().color = Color.red;
         }
+    }
+
+    void Update()
+    {
+
     }
 
     public void OnTriggerEnter2D(Collider2D col)
