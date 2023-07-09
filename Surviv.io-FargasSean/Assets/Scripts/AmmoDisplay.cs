@@ -19,13 +19,11 @@ public class AmmoDisplay : MonoBehaviour
 
     void Update()
     {
-        //ammoText.text = "AMMO: " + ammoCapacity;
         UpdateAmmoText();
     }
 
     public void UpdateAmmoText()
     {
-        //ammoText.text = $"Ammo: {shoot.currentClip} / {shoot.maxAmmoSize}";
-        ammoText.text = $"Ammo: {shoot.currentClip} / {shoot.maxClipSize} | {shoot.currentAmmo} / {shoot.maxAmmoSize}";
+        ammoText.text = $"{shoot.currentClip} / {shoot.maxAmmoSize}";
     }
 }

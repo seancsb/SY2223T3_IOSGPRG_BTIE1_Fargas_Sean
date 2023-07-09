@@ -16,7 +16,6 @@ public class Spawner : MonoBehaviour
     private void Start()
     {
         StartCoroutine(ObjectSpawn());
-        //ObjectSpawn();
     }
 
     IEnumerator ObjectSpawn()
@@ -28,26 +27,7 @@ public class Spawner : MonoBehaviour
             var position = new Vector3(xPos, yPos);
             GameObject gameObject = Instantiate(objects[Random.Range(0, objects.Length)], position, Quaternion.identity);
             yield return new WaitForSeconds(secondSpawn);
-            //Destroy(gameObject, 5f);
             repeat++;
         }
     }
-
-    //void Update()
-    //{
-    //    if (repeat != 15)
-    //    {
-    //        ObjectSpawn();
-    //    }
-    //}
-
-    //void ObjectSpawn()
-    //{
-    //    var xPos = Random.Range(minXPos, maxXPos);
-    //    var yPos = Random.Range(minYPos, maxYPos);
-    //    var position = new Vector3(xPos, yPos);
-    //    GameObject gameObject = Instantiate(objects[Random.Range(0, objects.Length)], position, Quaternion.identity);
-    //    Destroy(gameObject, 5f);
-    //    repeat++;
-    //}
 }

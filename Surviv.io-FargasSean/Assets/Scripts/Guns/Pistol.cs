@@ -9,9 +9,7 @@ public class Pistol : Gun
     {
         if (collision.name == "Player")
         {
-            //ammoDisplay.ammoCapacity += 30;
             Destroy(gameObject);
-            //Debug.Log("pickup");
         }
     }
 }

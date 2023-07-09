@@ -12,16 +12,8 @@ public class Ammo : MonoBehaviour
 
         if (shoot)
         {
-            //if (collision.name == "Player")
-            //{
-                //ammoDisplay.ammoCapacity += 30;
-
-                // Add Ammo to Specified Gun Ammo
-                // Sets the Ammo Display for this gun to true
-                shoot.AddAmmo(shoot.maxAmmoSize);
-                Destroy(gameObject);
-                //Debug.Log("pickup");
-            //}
+            shoot.AddAmmo(shoot.maxAmmoSize);
+            Destroy(gameObject);
         }
     }
 }

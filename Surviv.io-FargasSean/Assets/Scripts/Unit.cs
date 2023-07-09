@@ -15,7 +15,7 @@ public class Unit : MonoBehaviour
 
     private void Shoot()
     {
-        //gun.Shoot();
+        
     }
 
     private void Reload()
@@ -35,7 +35,7 @@ public class Unit : MonoBehaviour
 
         if (health <= 0)
         {
-            // player dies
+            
 
         }
     }
@@ -52,7 +52,7 @@ public class Unit : MonoBehaviour
     {
         if (health <= 0)
         {
-            //Application.LoadLevel(Application.loadedLevel);
+            
             Debug.Log("Dead");
         }
 

@@ -21,7 +21,5 @@ public class PlayerController : MonoBehaviour
         Quaternion toRotation = Quaternion.LookRotation(transform.forward, playerRotation);
 
         transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
-
-        //rb.MoveRotation(transform.rotation);
     }
 }

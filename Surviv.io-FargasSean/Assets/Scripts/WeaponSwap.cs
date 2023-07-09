@@ -21,7 +21,6 @@ public class WeaponSwap : MonoBehaviour
             weapon.guns[0].SetActive(true);
             weapon.guns[1].SetActive(false);
             weapon.guns[2].SetActive(false);
-            //StartCoroutine(Normal());
         }
 
         if (weaponHit.CompareTag("Shotgun"))
@@ -29,7 +28,6 @@ public class WeaponSwap : MonoBehaviour
             weapon.guns[0].SetActive(false);
             weapon.guns[1].SetActive(true);
             weapon.guns[2].SetActive(false);
-            //StartCoroutine(Normal());
         }
 
         if (weaponHit.CompareTag("MachineGun"))
@@ -37,7 +35,6 @@ public class WeaponSwap : MonoBehaviour
             weapon.guns[0].SetActive(false);
             weapon.guns[1].SetActive(false);
             weapon.guns[2].SetActive(true);
-            //StartCoroutine(Normal());
         }
     }
 }

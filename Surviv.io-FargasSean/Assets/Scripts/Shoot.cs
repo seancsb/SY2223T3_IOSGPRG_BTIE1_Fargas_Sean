@@ -58,14 +58,11 @@ public class Shoot : MonoBehaviour
 
     public void FireBullet()
     {
-        //if (currentClip > 0)
-        //{
-            GameObject bullet = Instantiate(bulletPref, transform.position, transform.rotation);
-            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        GameObject bullet = Instantiate(bulletPref, transform.position, transform.rotation);
+        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
 
-            rb.velocity = bulletSpeed * transform.up;
-            currentClip--;
-        //}
+        rb.velocity = bulletSpeed * transform.up;
+        currentClip--;
     }
 
     public void Reload()
