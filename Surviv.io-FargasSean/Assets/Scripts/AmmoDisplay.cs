@@ -18,8 +18,8 @@ public class AmmoDisplay : MonoBehaviour
 
         // Debug Ammo
 
-       // Debug.Log(shoot.currentClip);
-       // Debug.Log(shoot.currentAmmo);
+        //Debug.Log(shoot.currentClip);
+        //Debug.Log(shoot.currentAmmo);
     }
 
     void Update()

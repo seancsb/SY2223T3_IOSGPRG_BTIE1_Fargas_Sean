@@ -14,7 +14,7 @@ public class Shoot : MonoBehaviour
     private bool isFiring;
     private bool stopFiring;
 
-    public int currentClip, maxClipSize, currentAmmo, maxAmmoSize;
+    public int currentClip = 15, maxClipSize = 15, currentAmmo = 30, maxAmmoSize = 90;
 
     public virtual void Start()
     {
