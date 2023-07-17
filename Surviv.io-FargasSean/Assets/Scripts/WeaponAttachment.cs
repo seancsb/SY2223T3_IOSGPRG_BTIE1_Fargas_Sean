@@ -25,7 +25,7 @@ public class WeaponAttachment : MonoBehaviour
 
         // Set Pistol as Default
         guns[0].SetActive(true);
-        Debug.Log("Set Pistol Default");
+        //Debug.Log("Set Pistol Default");
         currentGun = guns[0];
         currentWeaponIndex = 0;
     }

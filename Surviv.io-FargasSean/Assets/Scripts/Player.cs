@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Unit : MonoBehaviour
+public class Player : MonoBehaviour
 {
     [SerializeField] public string unitName;
     [SerializeField] public float movementSpeed;
@@ -11,7 +11,7 @@ public class Unit : MonoBehaviour
     [SerializeField] public float health = 100f;
     public Image healthBar;
 
-    [SerializeField] private Gun gun;
+    [SerializeField] private Shoot gun;
 
     private void Shoot()
     {

@@ -1,8 +1,8 @@
-using System.Collections;
+  using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class RangedEnemy : Unit
 {
     [SerializeField] private float speed;
     [SerializeField] private float rotationSpeed;

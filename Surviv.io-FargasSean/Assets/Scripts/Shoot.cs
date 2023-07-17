@@ -14,7 +14,15 @@ public class Shoot : MonoBehaviour
     private bool isFiring;
     private bool stopFiring;
 
-    public int currentClip, maxClipSize = 10, currentAmmo, maxAmmoSize = 100;
+    public int currentClip, maxClipSize, currentAmmo, maxAmmoSize;
+
+    public virtual void Start()
+    {
+        // Debug Ammo
+
+        Debug.Log("CLIP: " + currentClip);
+        Debug.Log("AMMO: " + currentAmmo);
+    }
 
     private void Update()
     {
@@ -58,11 +66,14 @@ public class Shoot : MonoBehaviour
 
     public void FireBullet()
     {
-        GameObject bullet = Instantiate(bulletPref, transform.position, transform.rotation);
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        //if (currentClip > 0)
+        //{
+            GameObject bullet = Instantiate(bulletPref, transform.position, transform.rotation);
+            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
 
-        rb.velocity = bulletSpeed * transform.up;
-        currentClip--;
+            rb.velocity = bulletSpeed * transform.up;
+            currentClip--;
+        //}
     }
 
     public void Reload()

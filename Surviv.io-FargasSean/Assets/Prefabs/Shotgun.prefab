@@ -124,3 +124,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d49ea1f7911ffa4fb0f0d5410d6d3e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletPref: {fileID: 7092080743558457716, guid: 3232d21150605224da9a1c30c9ba46c0, type: 3}
+  bulletSpeed: 0
+  timeBetweenShots: 0
+  currentClip: 0
+  maxClipSize: 10
+  currentAmmo: 0
+  maxAmmoSize: 100
