@@ -28,7 +28,8 @@ public class Shoot : MonoBehaviour
     {
        if (isFiring)
         {
-            makeFireVariableFalse();
+            isFiring = false;
+            Invoke("makeFireVariableTrue", 0f);
             Fire();
         }
 
@@ -50,30 +51,16 @@ public class Shoot : MonoBehaviour
         stopFiring = true;
     }
 
-    public void makeFireVariableTrue()
-    {
-        isFiring = true;
-    }
-
-    public void makeFireVariableFalse()
-    {
-        isFiring = false;
-        if (stopFiring == false)
-        {
-            Invoke("makeFireVariableTrue", 0f);
-        }
-    }
-
     public void FireBullet()
     {
-        //if (currentClip > 0)
-        //{
+        if (currentClip > 0)
+        {
             GameObject bullet = Instantiate(bulletPref, transform.position, transform.rotation);
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
 
             rb.velocity = bulletSpeed * transform.up;
             currentClip--;
-        //}
+        }
     }
 
     public void Reload()

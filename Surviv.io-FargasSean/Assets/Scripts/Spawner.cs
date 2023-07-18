@@ -11,6 +11,9 @@ public class Spawner : MonoBehaviour
     [SerializeField] float minYPos;
     [SerializeField] float maxYPos;
 
+    [SerializeField] Vector2 xPosMinMax;
+    [SerializeField] Vector2 yPosMinMax;
+
     int repeat;
 
     private void Start()
@@ -22,7 +25,7 @@ public class Spawner : MonoBehaviour
     {
         while (repeat != 20)
         {
-            var xPos = Random.Range(minXPos, maxXPos);
+            var xPos = Random.Range(xPosMinMax.x, xPosMinMax.y);
             var yPos = Random.Range(minYPos, maxYPos);
             var position = new Vector3(xPos, yPos);
             GameObject gameObject = Instantiate(objects[Random.Range(0, objects.Length)], position, Quaternion.identity);

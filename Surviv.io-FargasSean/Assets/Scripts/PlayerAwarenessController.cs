@@ -5,9 +5,17 @@ using UnityEngine.UIElements;
 
 public class PlayerAwarenessController : MonoBehaviour
 {
-    public bool AwareOfPlayer { get; private set; }
+    public bool AwareOfPlayer 
+    { 
+        get; 
+        private set; 
+    }
 
-    public Vector2 DirectionToPlayer { get; private set; }
+    public Vector2 DirectionToPlayer 
+    { 
+        get; 
+        private set; 
+    }
 
     [SerializeField] private float playerAwarenessDistance;
 
